@@ -72,11 +72,30 @@
         .hero-logo {
             max-width: 400px;
             margin: 0 auto 2rem;
+            animation: fadeInScale 1s ease-out;
         }
 
         .hero-logo img {
             width: 100%;
             height: auto;
+            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .hero-logo img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 50px rgba(212, 175, 55, 0.8));
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .hero-content {

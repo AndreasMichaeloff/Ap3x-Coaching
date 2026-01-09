@@ -524,6 +524,83 @@
             color: #D4AF37;
         }
 
+        /* Client Transformations */
+        .transformations {
+            padding: 6rem 5%;
+            background-color: #0f0f0f;
+        }
+
+        .transformations .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .transformations h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .transformations .subtitle {
+            text-align: center;
+            color: #cccccc;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .transformations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem;
+        }
+
+        .transformation-card {
+            background-color: #2d2d2d;
+            border-radius: 15px;
+            padding: 2rem;
+            border: 2px solid #D4AF37;
+        }
+
+        .transformation-card h3 {
+            color: #D4AF37;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .transformation-image {
+            position: relative;
+        }
+
+        .transformation-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #D4AF37;
+        }
+
+        .transformation-image .label {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #D4AF37;
+            color: #1a1a1a;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
         /* Footer */
         footer {
             background-color: #000000;
@@ -576,6 +653,14 @@
             }
 
             .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .transformations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .before-after {
                 grid-template-columns: 1fr;
             }
 
@@ -771,6 +856,50 @@
                 <div class="why-card">
                     <h3>Lifestyle Integration</h3>
                     <p>We fit your life, not the other way around. No rigid systems, just results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Transformations -->
+    <section class="transformations">
+        <div class="container">
+            <h2>CLIENT TRANSFORMATIONS</h2>
+            <p class="subtitle">Real clients. Real results. Real transformations.</p>
+            
+            <div class="transformations-grid">
+                <!-- David's Transformation -->
+                <div class="transformation-card">
+                    <h3>David</h3>
+                    <div class="transformation-images">
+                        <div class="before-after">
+                            <div class="transformation-image">
+                                <span class="label">BEFORE</span>
+                                <img src="david-before.jpg" alt="David Before">
+                            </div>
+                            <div class="transformation-image">
+                                <span class="label">AFTER</span>
+                                <img src="david-after.jpg" alt="David After">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Braylin's Transformation -->
+                <div class="transformation-card">
+                    <h3>Braylin</h3>
+                    <div class="transformation-images">
+                        <div class="before-after">
+                            <div class="transformation-image">
+                                <span class="label">BEFORE</span>
+                                <img src="braylin-before.jpg" alt="Braylin Before">
+                            </div>
+                            <div class="transformation-image">
+                                <span class="label">AFTER</span>
+                                <img src="braylin-after.jpg" alt="Braylin After">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

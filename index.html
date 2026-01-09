@@ -21,7 +21,7 @@
         /* Navigation */
         nav {
             background-color: #0f0f0f;
-            padding: 1.5rem 5%;
+            padding: 1rem 5%;
             position: fixed;
             width: 100%;
             top: 0;
@@ -37,11 +37,11 @@
             align-items: center;
         }
 
-        .logo {
+        .logo-text {
             font-size: 2rem;
             font-weight: bold;
             color: #D4AF37;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         nav ul {
@@ -65,8 +65,18 @@
         .hero {
             margin-top: 80px;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding: 8rem 5% 6rem;
+            padding: 4rem 5% 4rem;
             text-align: center;
+        }
+
+        .hero-logo {
+            max-width: 400px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: auto;
         }
 
         .hero-content {
@@ -75,7 +85,7 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3rem;
             color: #D4AF37;
             margin-bottom: 1rem;
             font-weight: bold;
@@ -138,58 +148,26 @@
             font-size: 1.2rem;
             color: #cccccc;
             line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 3rem;
+            max-width: 900px;
+            margin: 0 auto 2rem;
         }
 
-        /* Services Preview */
-        .services-preview {
-            padding: 6rem 5%;
-            background-color: #1a1a1a;
-        }
-
-        .services-preview .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .services-preview h2 {
-            font-size: 2.5rem;
-            color: #D4AF37;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
+        .mission-highlight {
             background-color: #2d2d2d;
             padding: 2rem;
             border-radius: 10px;
             border-left: 4px solid #D4AF37;
-            transition: transform 0.3s;
+            margin: 3rem auto;
+            max-width: 900px;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
+        .mission-highlight p {
+            font-size: 1.3rem;
             color: #D4AF37;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            margin: 0;
         }
 
-        .service-card p {
-            color: #cccccc;
-            line-height: 1.6;
-        }
-
-        /* 2:1 Coaching Section */
+        /* 2:1 Coaching Model */
         .coaching-model {
             padding: 6rem 5%;
             background: linear-gradient(135deg, #8B3A8B 0%, #4B0082 100%);
@@ -211,14 +189,297 @@
             font-size: 1.2rem;
             color: #ffffff;
             line-height: 1.8;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+        }
+
+        /* Coaching Tiers Section */
+        .coaching-tiers {
+            padding: 6rem 5%;
+            background-color: #1a1a1a;
+        }
+
+        .coaching-tiers .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coaching-tiers h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .coaching-tiers .subtitle {
+            text-align: center;
+            color: #cccccc;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .tier-card {
+            background-color: #2d2d2d;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            border-top: 5px solid #D4AF37;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .tier-card.platinum {
+            border-top-color: #E5E4E2;
+        }
+
+        .tier-card.gold {
+            border-top-color: #D4AF37;
+        }
+
+        .tier-card.silver {
+            border-top-color: #C0C0C0;
+        }
+
+        .tier-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .tier-badge.platinum {
+            background-color: #E5E4E2;
+            color: #1a1a1a;
+        }
+
+        .tier-badge.gold {
+            background-color: #D4AF37;
+            color: #1a1a1a;
+        }
+
+        .tier-badge.silver {
+            background-color: #C0C0C0;
+            color: #1a1a1a;
+        }
+
+        .tier-card h3 {
+            font-size: 2rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+        }
+
+        .tier-card .tier-description {
+            color: #cccccc;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .tier-card ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .tier-card li {
+            color: #cccccc;
+            padding: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .tier-card li:before {
+            content: "✓";
+            color: #D4AF37;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .tier-price {
+            font-size: 1.3rem;
+            color: #D4AF37;
+            font-weight: bold;
+            margin: 2rem 0 1rem;
+        }
+
+        .consultation-note {
+            background-color: #E5E4E2;
+            color: #1a1a1a;
+            padding: 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        /* Coaching Styles Section */
+        .coaching-styles {
+            padding: 6rem 5%;
+            background-color: #0f0f0f;
+        }
+
+        .coaching-styles .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coaching-styles h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .style-card {
+            background-color: #2d2d2d;
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #D4AF37;
+            transition: transform 0.3s;
+        }
+
+        .style-card:hover {
+            transform: scale(1.05);
+        }
+
+        .style-card h3 {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .style-card p {
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+
+        /* Coaches Section */
+        .coaches {
+            padding: 6rem 5%;
+            background-color: #1a1a1a;
+        }
+
+        .coaches .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coaches h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .coaches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .coach-card {
+            background-color: #2d2d2d;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid #D4AF37;
+            transition: transform 0.3s;
+        }
+
+        .coach-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .coach-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .coach-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .coach-info h3 {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .coach-info p {
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+
+        /* Why AP3X Section */
+        .why-ap3x {
+            padding: 6rem 5%;
+            background-color: #0f0f0f;
+        }
+
+        .why-ap3x .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-ap3x h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 3rem;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-card {
+            background-color: #2d2d2d;
+            padding: 2rem;
+            border-radius: 10px;
+            border-bottom: 3px solid #D4AF37;
+        }
+
+        .why-card h3 {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-card p {
+            color: #cccccc;
+            line-height: 1.6;
         }
 
         /* Contact Section */
         .contact-preview {
             padding: 6rem 5%;
-            background-color: #0f0f0f;
+            background-color: #1a1a1a;
         }
 
         .contact-preview .container {
@@ -250,6 +511,7 @@
             color: #D4AF37;
             display: block;
             margin-bottom: 0.5rem;
+            font-size: 1.2rem;
         }
 
         .contact-item a {
@@ -265,19 +527,35 @@
         /* Footer */
         footer {
             background-color: #000000;
-            padding: 2rem 5%;
+            padding: 3rem 5%;
             text-align: center;
+        }
+
+        .footer-tagline {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        footer p {
             color: #666666;
+            margin-top: 1rem;
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .hero h2 {
                 font-size: 1.3rem;
+            }
+
+            .hero-logo {
+                max-width: 250px;
             }
 
             nav ul {
@@ -285,7 +563,19 @@
                 font-size: 0.9rem;
             }
 
-            .services-grid {
+            .tiers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .coaches-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .styles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -300,11 +590,11 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">AP3X</div>
+            <div class="logo-text">AP3X</div>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#coaching">Coaching</a></li>
+                <li><a href="#coaches">Coaches</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -312,10 +602,14 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="hero-logo">
+            <!-- Replace with: logo-full.png (the gorilla logo) -->
+            <img src="logo-full.png" alt="AP3X Coaching Logo">
+        </div>
         <div class="hero-content">
             <h1>AP3X COACHING</h1>
             <h2>Next-Generation Fitness & Lifestyle Coaching</h2>
-            <p>Our mission is to help clients not only meet their goals, but create goals that extend far beyond a single program or subscription. We don't just change physiques — we shape mindsets, habits, and systems that stick.</p>
+            <p>We don't just change physiques — we shape mindsets, habits, and systems that stick. Our mission is to help clients not only meet their goals, but create goals that extend far beyond a single program or subscription.</p>
             <a href="#contact" class="cta-button">START YOUR TRANSFORMATION</a>
         </div>
     </section>
@@ -324,43 +618,10 @@
     <section class="mission">
         <div class="container">
             <h2>Built on Results, Education, and Long-Term Transformation</h2>
-            <p>AP3X Coaching / Logistics is a next-generation fitness and lifestyle coaching brand. We believe in empowering our clients with the knowledge, support, and accountability they need to achieve lasting results. This isn't just another fitness program — it's a complete lifestyle transformation.</p>
-        </div>
-    </section>
-
-    <!-- Services Preview -->
-    <section class="services-preview" id="services">
-        <div class="container">
-            <h2>OUR SERVICES</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Meal Plans</h3>
-                    <p>Customized nutrition strategies designed for your goals and lifestyle.</p>
-                </div>
-                <div class="service-card">
-                    <h3>24/7 Communication</h3>
-                    <p>Always available to support you on your journey.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Workout Plans</h3>
-                    <p>Personalized training programs tailored to your fitness level.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Lifestyle Coaching</h3>
-                    <p>Guidance beyond the gym for complete life transformation.</p>
-                </div>
-                <div class="service-card">
-                    <h3>2:1 Coaching</h3>
-                    <p>Two expert coaches dedicated to your success.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Routine/Habit Plan</h3>
-                    <p>Build sustainable systems that create lasting change.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Hybrid Training</h3>
-                    <p>The perfect blend of strength and conditioning.</p>
-                </div>
+            <p>AP3X Coaching / Logistics is a next-generation fitness and lifestyle coaching brand. We believe in empowering our clients with the knowledge, support, and accountability they need to achieve lasting results.</p>
+            <p>We coach all genders, all ages, all experience levels, and adapt to all lifestyles and budgets — without ever compromising coaching quality. Whether you're a full-time professional, a parent, constantly traveling, or just starting your fitness journey, AP3X is designed to fit your life, not force you into a rigid system.</p>
+            <div class="mission-highlight">
+                <p>Every client receives personal coaching with context, not generic programs or cookie-cutter plans. We take the time to understand you, your goals, your constraints, and your lifestyle.</p>
             </div>
         </div>
     </section>
@@ -369,14 +630,156 @@
     <section class="coaching-model">
         <div class="container">
             <h2>What Makes AP3X Different?</h2>
-            <p>Our 2:1 coaching model. Traditional 1:1 coaching limits perspective — we believe two minds are always greater than one. Coaches Gavin Melton & Brody Melton work together to provide you with comprehensive support, diverse expertise, and accountability that drives real results.</p>
+            <p>Our 2:1 coaching model. Traditional 1:1 coaching limits perspective — we believe two minds are always greater than one. Every client benefits from dual insight, accountability, and strategy, ensuring no detail is missed and no client is overlooked. Coaches Gavin Melton & Brody Melton work together to provide you with comprehensive support, diverse expertise, and accountability that drives real results.</p>
         </div>
     </section>
 
-    <!-- Contact Preview -->
+    <!-- Coaching Tiers -->
+    <section class="coaching-tiers" id="coaching">
+        <div class="container">
+            <h2>COACHING LEVELS</h2>
+            <p class="subtitle">Choose the level that fits your goals, lifestyle, and commitment</p>
+            
+            <div class="tiers-grid">
+                <!-- Tier 1 - Platinum -->
+                <div class="tier-card platinum">
+                    <span class="tier-badge platinum">TIER 1</span>
+                    <h3>Platinum Coaching</h3>
+                    <p class="tier-description">Our highest level of service, delivering a true concierge coaching experience</p>
+                    <ul>
+                        <li>24/7 direct communication (calls & text)</li>
+                        <li>Fully personalized meal plan</li>
+                        <li>Custom workout programming</li>
+                        <li>Supplementation guidance</li>
+                        <li>Health & lifestyle optimization plans</li>
+                        <li>Lifestyle hacks & habit-building systems</li>
+                        <li>Weekly to daily check-ins</li>
+                    </ul>
+                    <div class="consultation-note">
+                        Custom Pricing - Consultation Required
+                    </div>
+                    <p style="color: #cccccc; font-size: 0.9rem; margin-top: 1rem;">Designed for clients who want elite-level attention, rapid feedback, and total lifestyle integration.</p>
+                </div>
+
+                <!-- Tier 2 - Gold -->
+                <div class="tier-card gold">
+                    <span class="tier-badge gold">TIER 2</span>
+                    <h3>Gold Coaching</h3>
+                    <p class="tier-description">High-level personalized coaching that balances structure, flexibility, and results</p>
+                    <ul>
+                        <li>Direct coach communication (9am - 9pm)</li>
+                        <li>Two phone calls per week</li>
+                        <li>Personalized nutrition framework or meal plan</li>
+                        <li>Custom workout programming</li>
+                        <li>Supplementation guidance</li>
+                        <li>Health & lifestyle optimization support</li>
+                        <li>Habit-building strategies</li>
+                        <li>Weekly structured check-ins</li>
+                    </ul>
+                    <div class="tier-price">Pricing varies by subscription length</div>
+                    <p style="color: #cccccc; font-size: 0.9rem;">Ideal for driven individuals who want premium coaching, consistency, and long-term progress without the full concierge intensity.</p>
+                </div>
+
+                <!-- Tier 3 - Silver -->
+                <div class="tier-card silver">
+                    <span class="tier-badge silver">TIER 3</span>
+                    <h3>Silver Coaching</h3>
+                    <p class="tier-description">Affordable, effective coaching designed to deliver results while fitting tighter schedules and budgets</p>
+                    <ul>
+                        <li>Direct coach communication (9am - 9pm)</li>
+                        <li>One phone call per week</li>
+                        <li>Personalized workout programming</li>
+                        <li>Nutrition guidance & support</li>
+                        <li>Supplementation recommendations</li>
+                        <li>Regular progress check-ins</li>
+                        <li>Accountability & motivation</li>
+                    </ul>
+                    <div class="tier-price">Pricing varies by subscription length</div>
+                    <p style="color: #cccccc; font-size: 0.9rem;">Perfect for those ready to commit to change with professional guidance at an accessible price point.</p>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: #D4AF37; margin-top: 3rem; font-size: 1.1rem;">
+                Subscription options: 3 months, 4 months, 6 months, 8 months, or 1 year
+            </p>
+        </div>
+    </section>
+
+    <!-- Coaching Styles -->
+    <section class="coaching-styles">
+        <div class="container">
+            <h2>COACHING STYLES</h2>
+            <div class="styles-grid">
+                <div class="style-card">
+                    <h3>Bodybuilding</h3>
+                    <p>Structured training and nutrition for muscle growth, aesthetics, and competition prep</p>
+                </div>
+                <div class="style-card">
+                    <h3>Lifestyle Transformation</h3>
+                    <p>Complete life overhaul focusing on sustainable habits, mindset, and long-term success</p>
+                </div>
+                <div class="style-card">
+                    <h3>General Fitness & Performance</h3>
+                    <p>Balanced approach for overall health, strength, conditioning, and athletic performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaches Section -->
+    <section class="coaches" id="coaches">
+        <div class="container">
+            <h2>MEET YOUR COACHES</h2>
+            <div class="coaches-grid">
+                <div class="coach-card">
+                    <!-- Replace 'gavin.jpg' with the actual filename -->
+                    <img src="gavin.jpg" alt="Gavin Melton" class="coach-image">
+                    <div class="coach-info">
+                        <h3>Gavin Melton</h3>
+                        <p>Co-Founder & Head Coach</p>
+                    </div>
+                </div>
+                <div class="coach-card">
+                    <!-- Replace 'brody.jpg' with the actual filename -->
+                    <img src="brody.jpg" alt="Brody Melton" class="coach-image">
+                    <div class="coach-info">
+                        <h3>Brody Melton</h3>
+                        <p>Co-Founder & Head Coach</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why AP3X -->
+    <section class="why-ap3x">
+        <div class="container">
+            <h2>WHY CHOOSE AP3X?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>No Cookie-Cutter Plans</h3>
+                    <p>Every program is built specifically for you, your goals, and your lifestyle.</p>
+                </div>
+                <div class="why-card">
+                    <h3>2:1 Coaching Model</h3>
+                    <p>Two expert coaches providing dual perspective, accountability, and support.</p>
+                </div>
+                <div class="why-card">
+                    <h3>All Levels Welcome</h3>
+                    <p>From complete beginners to advanced athletes — we adapt to you.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Lifestyle Integration</h3>
+                    <p>We fit your life, not the other way around. No rigid systems, just results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section class="contact-preview" id="contact">
         <div class="container">
-            <h2>JOIN US/QUESTIONS!</h2>
+            <h2>JOIN US / QUESTIONS!</h2>
             <p style="color: #cccccc; font-size: 1.2rem; margin-bottom: 2rem;">Ready to transform your life? Get in touch with us today.</p>
             <div class="contact-info">
                 <div class="contact-item">
@@ -398,6 +801,8 @@
 
     <!-- Footer -->
     <footer>
+        <div class="footer-tagline">THIS IS THE FUTURE OF FITNESS COACHING</div>
+        <div class="footer-tagline">THIS IS AP3X COACHING / LOGISTICS</div>
         <p>&copy; 2026 AP3X Coaching. All rights reserved.</p>
     </footer>
 </body>

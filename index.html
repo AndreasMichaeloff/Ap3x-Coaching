@@ -42,6 +42,15 @@
             font-weight: bold;
             color: #D4AF37;
             letter-spacing: 3px;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .logo-text:hover {
+            color: #f0c350;
+            transform: scale(1.05);
         }
 
         nav ul {
@@ -412,10 +421,9 @@
         }
 
         .coaches-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            align-items: start;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .coach-card {
@@ -424,6 +432,7 @@
             overflow: hidden;
             border: 3px solid #D4AF37;
             transition: transform 0.3s;
+            max-width: 600px;
         }
 
         .coach-card:hover {
@@ -432,7 +441,7 @@
 
         .coach-image {
             width: 100%;
-            height: 400px;
+            height: 500px;
             object-fit: cover;
         }
 
@@ -694,7 +703,7 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo-text">AP3X</div>
+            <a href="#home" class="logo-text">AP3X</a>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#coaching">Coaching</a></li>
@@ -836,19 +845,11 @@
             <h2>MEET YOUR COACHES</h2>
             <div class="coaches-grid">
                 <div class="coach-card">
-                    <!-- Replace 'gavin.jpg' with the actual filename -->
-                    <img src="gavin.jpg" alt="Gavin Melton" class="coach-image">
+                    <!-- Replace 'coaches.jpg' with the actual filename of the combined photo -->
+                    <img src="coaches.jpg" alt="Gavin & Brody Melton" class="coach-image">
                     <div class="coach-info">
-                        <h3>Gavin Melton</h3>
-                        <p>Co-Founder & Head Coach</p>
-                    </div>
-                </div>
-                <div class="coach-card">
-                    <!-- Replace 'brody.jpg' with the actual filename -->
-                    <img src="brody.jpg" alt="Brody Melton" class="coach-image">
-                    <div class="coach-info">
-                        <h3>Brody Melton</h3>
-                        <p>Co-Founder & Head Coach</p>
+                        <h3>Gavin & Brody Melton</h3>
+                        <p>Co-Founders & Head Coaches</p>
                     </div>
                 </div>
             </div>

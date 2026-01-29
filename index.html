@@ -1,284 +1,958 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MPC Health & Fitness</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #0b0b0b;
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPC Health & Fitness Coaching - Creating Dreams into reality!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Sticky Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(0,0,0,0.9);
-      backdrop-filter: blur(6px);
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
 
-    header nav a {
-      color: #f5f5f5;
-      margin-left: 18px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+        /* Navigation */
+        nav {
+            background-color: #0f0f0f;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
 
-    header nav a:hover {
-      opacity: 0.75;
-    }
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .hero {
-      padding: 90px 24px;
-      text-align: center;
-      background: linear-gradient(to bottom, #000, #111);
-    }
+        .logo-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #D4AF37;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s;
+            text-decoration: none;
+            display: block;
+        }
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+        .logo-text:hover {
+            color: #f0c350;
+            transform: scale(1.05);
+        }
 
-    .hero p {
-      max-width: 800px;
-      margin: 0 auto 30px;
-      color: #ccc;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
 
-    .btn {
-      background: #ffffff;
-      color: #000;
-      padding: 14px 28px;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      border-radius: 6px;
-    }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-    section {
-      padding: 80px 24px;
-      max-width: 1100px;
-      margin: auto;
-    }
+        nav a:hover {
+            color: #D4AF37;
+        }
 
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 4rem 5% 4rem;
+            text-align: center;
+        }
 
-    .tiers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
+        .hero-logo {
+            max-width: 400px;
+            margin: 0 auto 2rem;
+            animation: fadeInScale 1s ease-out;
+        }
 
-    .card {
-      background: #141414;
-      padding: 28px;
-      border-radius: 14px;
-    }
+        .hero-logo img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
 
-    .card h3 {
-      margin-top: 0;
-    }
+        .hero-logo img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 50px rgba(212, 175, 55, 0.8));
+        }
 
-    ul {
-      padding-left: 20px;
-    }
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
-    .coaches {
-      text-align: center;
-    }
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-    footer {
-      background: #000;
-      padding: 40px 24px;
-      text-align: center;
-      color: #aaa;
-    }
+        .hero h1 {
+            font-size: 3rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
 
-    footer a {
-      color: #fff;
-      text-decoration: none;
-    }
+        .hero h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
 
-    /* Anchor offset for sticky header */
-    section[id] {
-      scroll-margin-top: 90px;
-    }
+        .hero p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
 
-    /* Mobile Optimization */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 10px;
-      }
+        .cta-button {
+            background-color: #D4AF37;
+            color: #1a1a1a;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
 
-      header nav a {
-        margin: 0 10px;
-        font-size: 0.9rem;
-      }
+        .cta-button:hover {
+            background-color: #f0c350;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
 
-      .hero h1 {
-        font-size: 2.2rem;
-      }
+        /* Mission Section */
+        .mission {
+            padding: 6rem 5%;
+            background-color: #0f0f0f;
+        }
 
-      h2 {
-        font-size: 1.8rem;
-      }
+        .mission .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-      section {
-        padding: 60px 20px;
-      }
+        .mission h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 2rem;
+        }
 
-      .btn {
-        width: 100%;
-        max-width: 320px;
-      }
-    }
-  </style>
+        .mission p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+
+        .mission-highlight {
+            background-color: #2d2d2d;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #D4AF37;
+            margin: 3rem auto;
+            max-width: 900px;
+        }
+
+        .mission-highlight p {
+            font-size: 1.3rem;
+            color: #D4AF37;
+            margin: 0;
+        }
+
+        /* 2:1 Coaching Model */
+        .coaching-model {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #8B3A8B 0%, #4B0082 100%);
+        }
+
+        .coaching-model .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .coaching-model h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 2rem;
+        }
+
+        .coaching-model p {
+            font-size: 1.2rem;
+            color: #ffffff;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Coaching Tiers Section */
+        .coaching-tiers {
+            padding: 6rem 5%;
+            background-color: #1a1a1a;
+        }
+
+        .coaching-tiers .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coaching-tiers h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .coaching-tiers .subtitle {
+            text-align: center;
+            color: #cccccc;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .tier-card {
+            background-color: #2d2d2d;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            border-top: 5px solid #D4AF37;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .tier-card.platinum {
+            border-top-color: #E5E4E2;
+        }
+
+        .tier-card.gold {
+            border-top-color: #D4AF37;
+        }
+
+        .tier-card.silver {
+            border-top-color: #C0C0C0;
+        }
+
+        .tier-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .tier-badge.platinum {
+            background-color: #E5E4E2;
+            color: #1a1a1a;
+        }
+
+        .tier-badge.gold {
+            background-color: #D4AF37;
+            color: #1a1a1a;
+        }
+
+        .tier-badge.silver {
+            background-color: #C0C0C0;
+            color: #1a1a1a;
+        }
+
+        .tier-card h3 {
+            font-size: 2rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+        }
+
+        .tier-card .tier-description {
+            color: #cccccc;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .tier-card ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .tier-card li {
+            color: #cccccc;
+            padding: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .tier-card li:before {
+            content: "✓";
+            color: #D4AF37;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .tier-price {
+            font-size: 1.3rem;
+            color: #D4AF37;
+            font-weight: bold;
+            margin: 2rem 0 1rem;
+        }
+
+        .consultation-note {
+            background-color: #E5E4E2;
+            color: #1a1a1a;
+            padding: 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        /* Coaching Styles Section */
+        .coaching-styles {
+            padding: 6rem 5%;
+            background-color: #0f0f0f;
+        }
+
+        .coaching-styles .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coaching-styles h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .style-card {
+            background-color: #2d2d2d;
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #D4AF37;
+            transition: transform 0.3s;
+        }
+
+        .style-card:hover {
+            transform: scale(1.05);
+        }
+
+        .style-card h3 {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .style-card p {
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+
+        /* Coaches Section */
+        .coaches {
+            padding: 6rem 5%;
+            background-color: #1a1a1a;
+        }
+
+        .coaches .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coaches h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .coaches-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .coach-card {
+            background-color: #2d2d2d;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid #D4AF37;
+            transition: transform 0.3s;
+            max-width: 600px;
+        }
+
+        .coach-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .coach-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .coach-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .coach-info h3 {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .coach-info p {
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+
+        /* Why MPC Section */
+        .why-ap3x {
+            padding: 6rem 5%;
+            background-color: #0f0f0f;
+        }
+
+        .why-ap3x .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-ap3x h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 3rem;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-card {
+            background-color: #2d2d2d;
+            padding: 2rem;
+            border-radius: 10px;
+            border-bottom: 3px solid #D4AF37;
+        }
+
+        .why-card h3 {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-card p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-preview {
+            padding: 6rem 5%;
+            background-color: #1a1a1a;
+        }
+
+        .contact-preview .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-preview h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+            color: #D4AF37;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #D4AF37;
+        }
+
+        /* Client Transformations */
+        .transformations {
+            padding: 6rem 5%;
+            background-color: #0f0f0f;
+        }
+
+        .transformations .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .transformations h2 {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .transformations .subtitle {
+            text-align: center;
+            color: #cccccc;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .transformations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem;
+        }
+
+        .transformation-card {
+            background-color: #2d2d2d;
+            border-radius: 15px;
+            padding: 2rem;
+            border: 2px solid #D4AF37;
+        }
+
+        .transformation-card h3 {
+            color: #D4AF37;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .transformation-image {
+            position: relative;
+        }
+
+        .transformation-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #D4AF37;
+        }
+
+        .transformation-image .label {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #D4AF37;
+            color: #1a1a1a;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-tagline {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        footer p {
+            color: #666666;
+            margin-top: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .hero-logo {
+                max-width: 250px;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .tiers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .coaches-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .styles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .transformations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#home" class="logo-text">MPC</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#coaching">Coaching</a></li>
+                <li><a href="#coaches">Coaches</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<header>
-  <div style="font-weight:700; font-size:1.2rem;">MPC Health & Fitness</div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#coaching">Coaching</a>
-    <a href="#coaches">Coaches</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-logo">
+            <!-- Replace with: logo-full.png (the gorilla logo) -->
+            <img src="logo-full.png" alt="MPC Coaching Logo">
+        </div>
+        <div class="hero-content">
+            <h1>MPC Health & Fitness</h1>
+            <h2>Next-Generation Fitness & Lifestyle Coaching</h2>
+            <p>We don't just change physiques — we shape mindsets, habits, and systems that stick. Our mission is to help clients not only meet their goals, but create goals that extend far beyond a single program or subscription.</p>
+            <a href="#contact" class="cta-button">START YOUR TRANSFORMATION</a>
+        </div>
+    </section>
 
-<div class="hero">
-  <img src="logo-full.png" alt="MPC Health & Fitness" style="max-width:300px; width:100%; margin-bottom:30px;" />
-  <h1>MPC HEALTH & FITNESS</h1>
-  <p><strong>Next-Generation Fitness & Lifestyle Coaching</strong></p>
-  <p>We don't just change physiques — we shape mindsets, habits, and systems that stick. Our mission is to help clients not only meet their goals, but create goals that extend far beyond a single program or subscription.</p>
-  <a class="btn" href="https://calendly.com/brody-melton/consultation?month=2026-01" target="_blank">START YOUR TRANSFORMATION</a>
-</div>
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <h2>Built on Results, Education, and Long-Term Transformation</h2>
+            <p>MPC Health & Fitness is a next-generation fitness and lifestyle coaching brand. We believe in empowering our clients with the knowledge, support, and accountability they need to achieve lasting results.</p>
+            <p>We coach all genders, all ages, all experience levels, and adapt to all lifestyles and budgets — without ever compromising coaching quality. Whether you're a full-time professional, a parent, constantly traveling, or just starting your fitness journey, MPC is designed to fit your life, not force you into a rigid system.</p>
+            <div class="mission-highlight">
+                <p>Every client receives personal coaching with context, not generic programs or cookie-cutter plans. We take the time to understand you, your goals, your constraints, and your lifestyle.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="coaching">
-  <h2>Built on Results, Education, and Long-Term Transformation</h2>
-  <p>MPC Health & Fitness is a next-generation fitness and lifestyle coaching brand. We empower clients with the knowledge, support, and accountability needed to achieve lasting results.</p>
-  <p>We coach all genders, all ages, and all experience levels — adapting to all lifestyles and budgets without compromising coaching quality.</p>
-  <p>Every client receives personal coaching with context, not generic programs or cookie-cutter plans.</p>
-</section>
+    <!-- 2:1 Coaching Model -->
+    <section class="coaching-model">
+        <div class="container">
+            <h2>What Makes MPC Different?</h2>
+            <p>Our 2:1 coaching model. Traditional 1:1 coaching limits perspective — we believe two minds are always greater than one. Every client benefits from dual insight, accountability, and strategy, ensuring no detail is missed and no client is overlooked. Coaches Gavin Melton & Brody Melton work together to provide you with comprehensive support, diverse expertise, and accountability that drives real results.</p>
+        </div>
+    </section>
 
-<section>
-  <h2>What Makes MPC Different?</h2>
-  <p><strong>Our 2:1 coaching model.</strong> Two coaches collaborating to deliver deeper insight, accountability, and strategy so no detail is missed and no client is overlooked.</p>
-</section>
+    <!-- Coaching Tiers -->
+    <section class="coaching-tiers" id="coaching">
+        <div class="container">
+            <h2>COACHING LEVELS</h2>
+            <p class="subtitle">Choose the level that fits your goals, lifestyle, and commitment</p>
+            
+            <div class="tiers-grid">
+                <!-- Tier 1 - Platinum -->
+                <div class="tier-card platinum">
+                    <span class="tier-badge platinum">TIER 1</span>
+                    <h3>Platinum Coaching</h3>
+                    <p class="tier-description">Our highest level of service, delivering a true concierge coaching experience</p>
+                    <ul>
+                        <li>24/7 direct communication (calls & text)</li>
+                        <li>Fully personalized meal plan</li>
+                        <li>Custom workout programming</li>
+                        <li>Supplementation guidance</li>
+                        <li>Health & lifestyle optimization plans</li>
+                        <li>Lifestyle hacks & habit-building systems</li>
+                        <li>Weekly to daily check-ins</li>
+                    </ul>
+                    <div class="consultation-note">
+                        Custom Pricing - Consultation Required
+                    </div>
+                    <p style="color: #cccccc; font-size: 0.9rem; margin-top: 1rem;">Designed for clients who want elite-level attention, rapid feedback, and total lifestyle integration.</p>
+                </div>
 
-<section>
-  <h2>Coaching Levels</h2>
-  <div class="tiers">
-    <div class="card">
-      <h3>TIER 1 – Bronze Coaching</h3>
-      <ul>
-        <li>Direct coach access (9am–5pm)</li>
-        <li>One call every other week</li>
-        <li>Custom workouts & basic nutrition guidance</li>
-        <li>Accountability & progress tracking</li>
-      </ul>
-      <p><strong>Pricing varies by subscription length</strong></p>
-    </div>
+                <!-- Tier 2 - Gold -->
+                <div class="tier-card gold">
+                    <span class="tier-badge gold">TIER 2</span>
+                    <h3>Gold Coaching</h3>
+                    <p class="tier-description">High-level personalized coaching that balances structure, flexibility, and results</p>
+                    <ul>
+                        <li>Direct coach communication (9am - 9pm)</li>
+                        <li>Two phone calls per week</li>
+                        <li>Personalized nutrition framework or meal plan</li>
+                        <li>Custom workout programming</li>
+                        <li>Supplementation guidance</li>
+                        <li>Health & lifestyle optimization support</li>
+                        <li>Habit-building strategies</li>
+                        <li>Weekly structured check-ins</li>
+                    </ul>
+                    <div class="tier-price">Pricing varies by subscription length</div>
+                    <p style="color: #cccccc; font-size: 0.9rem;">Ideal for driven individuals who want premium coaching, consistency, and long-term progress without the full concierge intensity.</p>
+                </div>
 
-    <div class="card">
-      <h3>TIER 2 – Gold Coaching</h3>
-      <ul>
-        <li>Direct coach access (9am–9pm)</li>
-        <li>One call per week</li>
-        <li>Custom workouts & nutrition guidance</li>
-        <li>Weekly check-ins & progress tracking</li>
-      </ul>
-      <p><strong>Pricing varies by subscription length</strong></p>
-    </div>
+                <!-- Tier 3 - Silver -->
+                <div class="tier-card silver">
+                    <span class="tier-badge silver">TIER 3</span>
+                    <h3>Silver Coaching</h3>
+                    <p class="tier-description">Affordable, effective coaching designed to deliver results while fitting tighter schedules and budgets</p>
+                    <ul>
+                        <li>Direct coach communication (9am - 9pm)</li>
+                        <li>One phone call per week</li>
+                        <li>Personalized workout programming</li>
+                        <li>Nutrition guidance & support</li>
+                        <li>Supplementation recommendations</li>
+                        <li>Regular progress check-ins</li>
+                        <li>Accountability & motivation</li>
+                    </ul>
+                    <div class="tier-price">Pricing varies by subscription length</div>
+                    <p style="color: #cccccc; font-size: 0.9rem;">Perfect for those ready to commit to change with professional guidance at an accessible price point.</p>
+                </div>
+            </div>
 
-    <div class="card">
-      <h3>TIER 3 – Silver Coaching</h3>
-      <ul>
-        <li>Direct coach access (9am–9pm)</li>
-        <li>One call per week</li>
-        <li>Custom workouts & nutrition guidance</li>
-        <li>Accountability & progress tracking</li>
-      </ul>
-      <p><strong>Pricing varies by subscription length</strong></p>
-    </div>
-  </div>
-  <p>Subscription options: 3, 4, 6, 8 months, or 1 year</p>
-</section>
+            <p style="text-align: center; color: #D4AF37; margin-top: 3rem; font-size: 1.1rem;">
+                Subscription options: 3 months, 4 months, 6 months, 8 months, or 1 year
+            </p>
+        </div>
+    </section>
 
-<section>
-  <h2>Coaching Styles</h2>
-  <ul>
-    <li><strong>Bodybuilding:</strong> Structured training & nutrition for muscle growth and aesthetics</li>
-    <li><strong>Lifestyle Transformation:</strong> Sustainable habits, mindset, and long-term success</li>
-    <li><strong>General Fitness & Performance:</strong> Strength, conditioning, and overall health</li>
-  </ul>
-</section>
+    <!-- Coaching Styles -->
+    <section class="coaching-styles">
+        <div class="container">
+            <h2>COACHING STYLES</h2>
+            <div class="styles-grid">
+                <div class="style-card">
+                    <h3>Bodybuilding</h3>
+                    <p>Structured training and nutrition for muscle growth, aesthetics, and competition prep</p>
+                </div>
+                <div class="style-card">
+                    <h3>Lifestyle Transformation</h3>
+                    <p>Complete life overhaul focusing on sustainable habits, mindset, and long-term success</p>
+                </div>
+                <div class="style-card">
+                    <h3>General Fitness & Performance</h3>
+                    <p>Balanced approach for overall health, strength, conditioning, and athletic performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="coaches" id="coaches">
-  <h2>Meet Your Coaches</h2>
-  <img src="coaches.jpg" alt="Gavin & Brody Melton" style="max-width:500px; width:100%; border-radius:12px; margin-bottom:20px;" />
-  <p><strong>Gavin & Brody Melton</strong></p>
-  <p>Co-Founders & Head Coaches</p>
-</section>
+    <!-- Coaches Section -->
+    <section class="coaches" id="coaches">
+        <div class="container">
+            <h2>MEET YOUR COACHES</h2>
+            <div class="coaches-grid">
+                <div class="coach-card">
+                    <!-- Replace 'coaches.jpg' with the actual filename of the combined photo -->
+                    <img src="coaches.jpg" alt="Gavin & Brody Melton" class="coach-image">
+                    <div class="coach-info">
+                        <h3>Gavin & Brody Melton</h3>
+                        <p>Co-Founders & Head Coaches</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-  <h2>Why Choose MPC Health & Fitness?</h2>
-  <ul>
-    <li>No cookie-cutter plans</li>
-    <li>2:1 coaching model</li>
-    <li>All levels welcome</li>
-    <li>Lifestyle-first approach</li>
-  </ul>
-</section>
+    <!-- Why AP3X -->
+    <section class="why-ap3x">
+        <div class="container">
+            <h2>WHY CHOOSE MPC?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>No Cookie-Cutter Plans</h3>
+                    <p>Every program is built specifically for you, your goals, and your lifestyle.</p>
+                </div>
+                <div class="why-card">
+                    <h3>2:1 Coaching Model</h3>
+                    <p>Two expert coaches providing dual perspective, accountability, and support.</p>
+                </div>
+                <div class="why-card">
+                    <h3>All Levels Welcome</h3>
+                    <p>From complete beginners to advanced athletes — we adapt to you.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Lifestyle Integration</h3>
+                    <p>We fit your life, not the other way around. No rigid systems, just results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-  <h2>Client Transformations</h2>
-  <p>Real clients. Real results. Real transformations.</p>
-  <div class="tiers">
-    <div class="card">
-      <h3>David</h3>
-      <img src="david-before.jpg" alt="David Before" style="width:100%; border-radius:12px; margin-bottom:12px; object-fit:cover;" />
-      <img src="david-after.jpg" alt="David After" style="width:100%; border-radius:12px; object-fit:cover;" />
-    </div>
-    <div class="card">
-      <h3>Braylin</h3>
-      <img src="braylin-before.jpg" alt="Braylin Before" style="width:100%; border-radius:12px; margin-bottom:12px; object-fit:cover;" />
-      <img src="braylin-after.jpg" alt="Braylin After" style="width:100%; border-radius:12px; object-fit:cover;" />
-    </div>
-  </div>
-</section>
+    <!-- Client Transformations -->
+    <section class="transformations">
+        <div class="container">
+            <h2>CLIENT TRANSFORMATIONS</h2>
+            <p class="subtitle">Real clients. Real results. Real transformations.</p>
+            
+            <div class="transformations-grid">
+                <!-- David's Transformation -->
+                <div class="transformation-card">
+                    <h3>David</h3>
+                    <div class="transformation-images">
+                        <div class="before-after">
+                            <div class="transformation-image">
+                                <span class="label">BEFORE</span>
+                                <img src="david-before.jpg" alt="David Before">
+                            </div>
+                            <div class="transformation-image">
+                                <span class="label">AFTER</span>
+                                <img src="david-after.jpg" alt="David After">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<section id="contact">
-  <h2>Join Us / Questions</h2>
-  <p>Phone (Text): <strong>317-289-3540</strong></p>
-  <p>Email: <strong>brodymelton7@gmail.com</strong></p>
-  <p>Instagram DM: <a href="https://www.instagram.com/mpchealthfitness?igsh=bzZveTFrMTEyN3Yy" target="_blank">@mpchealthfitness</a></p>
-  <a class="btn" href="https://calendly.com/brody-melton/consultation?month=2026-01" target="_blank">BOOK A CONSULTATION</a>
-</section>
+                <!-- Braylin's Transformation -->
+                <div class="transformation-card">
+                    <h3>Braylin</h3>
+                    <div class="transformation-images">
+                        <div class="before-after">
+                            <div class="transformation-image">
+                                <span class="label">BEFORE</span>
+                                <img src="braylin-before.jpg" alt="Braylin Before">
+                            </div>
+                            <div class="transformation-image">
+                                <span class="label">AFTER</span>
+                                <img src="braylin-after.jpg" alt="Braylin After">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <p>THIS IS THE FUTURE OF FITNESS COACHING</p>
-  <p>THIS IS MPC HEALTH & FITNESS</p>
-  <p>© 2026 MPC Health & Fitness. All rights reserved.</p>
-</footer>
+    <!-- Contact Section -->
+    <section class="contact-preview" id="contact">
+        <div class="container">
+            <h2>JOIN US / QUESTIONS!</h2>
+            <p style="color: #cccccc; font-size: 1.2rem; margin-bottom: 2rem;">Ready to transform your life? Get in touch with us today.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Phone (Text)</strong>
+                    <a href="tel:317-289-3540">317-289-3540</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:brodymelton7@gmail.com">brodymelton7@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>DM on Instagram</strong>
+                    <a href="https://instagram.com/ap3x.supps" target="_blank">@mpchealthfitness</a>
+                </div>
+            </div>
+            <a href="mailto:brodymelton7@gmail.com" class="cta-button" style="margin-top: 3rem;">GET STARTED NOW</a>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-tagline">THIS IS THE FUTURE OF FITNESS COACHING</div>
+        <div class="footer-tagline">THIS IS MPC Health & Fitness</div>
+        <p>&copy; 2026 MPC Coaching. All rights reserved.</p>
+    </footer>
 </body>
 </html>

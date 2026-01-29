@@ -116,12 +116,40 @@
       text-decoration: none;
     }
 
+    /* Anchor offset for sticky header */
+    section[id] {
+      scroll-margin-top: 90px;
+    }
+
     /* Mobile Optimization */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         gap: 10px;
       }
+
+      header nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
 
       header nav a {
         margin: 0 10px;
@@ -160,7 +188,7 @@
 </header>
 
 <div class="hero">
-  <img src="logo-full.png" alt="MPC Health & Fitness" style="max-width:220px; margin-bottom:30px;" />
+  <img src="logo-full.png" alt="MPC Health & Fitness" style="max-width:300px; width:100%; margin-bottom:30px;" />
   <h1>MPC HEALTH & FITNESS</h1>
   <p><strong>Next-Generation Fitness & Lifestyle Coaching</strong></p>
   <p>We don't just change physiques — we shape mindsets, habits, and systems that stick. Our mission is to help clients not only meet their goals, but create goals that extend far beyond a single program or subscription.</p>
